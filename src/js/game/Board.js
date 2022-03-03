@@ -6,6 +6,7 @@ class Board {
   constructor() {
     this.$el = document.querySelector(Config.gameContainer);
 
+    console.log('this.$el :>> ', this.$el);
     this.activeTile = null;
     this.activeTileList = [];
 
@@ -13,6 +14,7 @@ class Board {
     this.player2 = new Players(2);
     this.activePlayer = this.player1;
     this.pieces = [];
+    this.board = Config.boards.default;
     this.loadBoard();
 
     this.events();
@@ -23,6 +25,9 @@ class Board {
 
   loadBoard() {
     this.board = Config.boards["default"];
+    console.log('Config.boards :>> ', Config.boards);
+    console.log('loadBoard', this.board);
+
     this.renderBoard();
   }
   /**

@@ -1,3 +1,6 @@
+import '../css/style.css';
+
+
 import Chess from './game/Chess.js'
 
 
