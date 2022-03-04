@@ -66,6 +66,8 @@ html, body {
 
 .game div {
   background-repeat: no-repeat;
+  background-size: contain !important;
+
   height: 100px;
   width: 100px;
 }

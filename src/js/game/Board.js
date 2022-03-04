@@ -1,5 +1,7 @@
 import Players from "./Players.js";
 import Config from "./Config.js";
+import {Pawn} from './Pieces/Pieces.js'
+import Tiles from './Tiles.js';
 
 //
 class Board {
@@ -14,8 +16,8 @@ class Board {
         this.player2 = new Players(2);
         this.activePlayer = this.player1;
         this.pieces = [];
-        this.board = Config.boards.default;
         this.loadBoard();
+
 
         this.events();
         //this.setPossibleMoves();
@@ -23,7 +25,11 @@ class Board {
 
     loadBoard() {
         this.board = Config.boards[0];
+        console.log('this.board :>> ', this.board);
         this.renderBoard();
+        this.renderPieces();
+        console.log('this.board :>> ', this.board);
+
     }
 
     /**
@@ -32,11 +38,8 @@ class Board {
     renderBoard() {
 
         for (let row = 0; row < this.board.length; row++) {
-            // console.log('r :>> ', row);
             for (let column = 0; column < this.board.length; column++) {
-                // console.log('c :>> ', column);
                 let tile = this.board[row][column];
-                // console.log('tile', tile);
                 let bgcolor = "";
                 //row is even
                 if (row % 2 === 0) {
@@ -51,6 +54,20 @@ class Board {
             }
         }
     }
+
+      /**
+     * Render pieces on board
+     */
+      renderPieces() {
+
+        for (var c = 0; c < this.board.size; c++) {
+            this.board[6][c].addPiece(new Pawn(this.player1))
+        }
+        console.log('new Pawn(this.player.1) :>> ', new Pawn(this.player1));
+        console.log('this.board :>> ', this.board);
+        // this.boards['default'] = board;
+      }
+
 
     onTileClick(selectedTile) {
         //first click, no selected tile

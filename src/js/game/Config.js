@@ -1,5 +1,5 @@
 import Tiles from './Tiles.js';
-import Pieces from './Pieces/Piece.js'
+import {Pawn} from './Pieces/Pieces.js'
 
 class Config {
     constructor(){
@@ -32,6 +32,10 @@ class Config {
             }
 
         }
+
+        board[6][1].addPiece(new Pawn(this.player1))
+
+
         return board;
     }
     createPieces() {}

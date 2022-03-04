@@ -40,6 +40,7 @@ class Tiles {
     }
     addPiece(newPiece) {
       this.piece = newPiece;
+
     }
   
     movePieceTo(tile){
