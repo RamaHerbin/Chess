@@ -6,9 +6,6 @@ class Chess {
       this.element = document.querySelector('.game');
         
       this.board = new Board();
-        
-
-
     }
   }
   

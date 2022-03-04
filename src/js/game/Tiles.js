@@ -8,8 +8,8 @@ class Tiles {
       this.pieceThreatList = [];
 
       this.coordinates = {
-        r: 0,
-        c: 0
+        row: 0,
+        column: 0
       };
   
       this.event = new CustomEvent("onTileClick", {
